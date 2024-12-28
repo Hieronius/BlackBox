@@ -1,7 +1,7 @@
 import UIKit
 
 /// A wrapper to automatically use `RootView` with Controller by `rootView` property
-public class GenericViewController<T: UIView>: UIViewController {
+open class GenericViewController<T: UIView>: UIViewController {
 
 	// MARK: - Public Properties
 
