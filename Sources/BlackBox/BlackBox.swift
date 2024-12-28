@@ -1,6 +1,18 @@
-public struct BlackBox {
-    public private(set) var text = "Hello, World!"
+import UIKit
 
-    public init() {
-    }
+/// A wrapper to automatically use `RootView` with Controller by `rootView` property
+public class GenericViewController<T: UIView>: UIViewController {
+
+	// MARK: - Public Properties
+
+	/// `rootView` to be used directly from ViewController
+	public var rootView: T {
+		return view as! T
+	}
+
+	// MARK: - Public Methods
+
+	override open func loadView() {
+		self.view = T()
+	}
 }
